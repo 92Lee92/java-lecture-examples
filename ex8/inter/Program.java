@@ -9,7 +9,7 @@ public class Program {
 
 	public static void main(String[] args) {
 //		Saver saver = new FileSaver();
-
+		System.out.println(Storage.getX());
 		DataManager manager = new DataManager();
 		manager.setStorage(new Storage() {
 			
@@ -25,6 +25,7 @@ public class Program {
 				
 			}
 		});
+		manager.getStorage().print();
 //		manager.setSaver(new Saver() {
 //			@Override
 //			public void save(Object[] datas, int index) {

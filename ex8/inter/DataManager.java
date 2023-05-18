@@ -31,7 +31,9 @@ public class DataManager {
 	public void setStorage(Storage storage) {
 		this.storage = storage;
 	}
-	
+	public Storage getStorage() {
+		return this.storage;
+	}
 	public void input() {
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("스페이스로 구분된 값들을 한 줄로 입력하세요.");
