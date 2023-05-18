@@ -10,8 +10,10 @@ import java.util.Scanner;
 
 public class DataManager {
 	private Object[] datas;
-	private Saver saver;
-	private Loader loader;
+//	private Saver saver;
+//	private Loader loader;
+	// 두 필드를 하나로 묶을 수 있지 않을까? saver와 loader를 한번에
+	private Storage storage;
 	private int index;
 
 	public DataManager() {
@@ -19,15 +21,17 @@ public class DataManager {
 		datas = new Object[10];
 	}
 
-	public void setSaver(Saver saver) {
-		this.saver = saver;
-
+//	public void setSaver(Saver saver) {
+//		this.saver = saver;
+//	}
+//
+//	public void setLoader(Loader loader) {
+//		this.loader = loader;
+//	}
+	public void setStorage(Storage storage) {
+		this.storage = storage;
 	}
-
-	public void setLoader(Loader loader) {
-		this.loader = loader;
-	}
-
+	
 	public void input() {
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("스페이스로 구분된 값들을 한 줄로 입력하세요.");
@@ -39,7 +43,6 @@ public class DataManager {
 				datas[index++] = tokens[i];
 			}
 		}
-
 	}
 
 	public void print() {
@@ -54,7 +57,7 @@ public class DataManager {
 	}
 
 	public void save() {
-		saver.save(datas, index);
+		storage.save(datas, index);
 
 	}
 
@@ -76,7 +79,8 @@ public class DataManager {
 //		}
 		// Loader 인터페이스를 정의하시오.
 		// 상단에 Injection이 가능하도록 setter를 추가해주세요.
-		loader.load();
+		if(storage!= null)
+			index = storage.load(datas);
 
 	}
 

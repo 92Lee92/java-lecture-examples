@@ -1,5 +1,5 @@
 package ex8.inter;
 
 public interface Loader {
-	public void load();
+	int load(Object[] datas);
 }
