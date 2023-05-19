@@ -57,6 +57,7 @@ public class Program {
 		System.out.println(set.iterator().next());
 		
 		// 일시적으로 사용하는 데이터를 클래스로 만들지 않고 임시적으로 Map에 키와 값 쌍으로 저장해서 사용
+		// 일시적으로 쓰는 속성을 가지는 데이터를 따로 정의해서 클래스로 만들지 않고 임시형식으로 사용
 		Map<String, Object> notice = new HashMap<>();
 		notice.put("id",1);
 		notice.put("title", "collection이란 무엇인가");
