@@ -62,7 +62,7 @@ public class Exam implements Iterable<Integer>{
 			// TODO Auto-generated method stub
 			switch(index++) {
 			case 0 :
-				return Exam.this.kor;
+				return Exam.this.kor;	//inner class에서 outer의 this를 사용할 수 있다.
 			case 1:
 				return Exam.this.eng;
 			case 2:
@@ -73,10 +73,11 @@ public class Exam implements Iterable<Integer>{
 		
 	}
 	
-	// 이렇게 익명클래스로 구현하면 안된다. 인덱스
+	// 익명클래스로 구현하는 것보다 innerclass를 만들어서 구현하는 것이 더 좋다.
 	@Override
 	public Iterator<Integer> iterator() {
 		return new ExamIterator();
+//		return this.new ExamIterator();  // this.가 생략되었다.
 	}
 	
 	

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import ex9.collection.Exam.ExamIterator;
+
 public class ThreadProgram {
 
 //	public static void print() {
@@ -49,6 +51,9 @@ public class ThreadProgram {
 		
 		// Iterable를 구현한 객체를 만들어서 foreach를 써보기
 		Exam exam = new Exam(10,20,30);
+		Exam.ExamIterator it = exam.new ExamIterator();
+		// 인스턴스 중첩클래스: outer instance가 있어야 되고 outer instance를 통해서만 객체를 생성할 수 있음.
+		// static 중첩클래스도 가능. inner class에서 outer의 this를 사용불가하다.
 		for(int n: exam)	// foreach안에는 iterable한 객체를 넣어야 한다.
 			System.out.println(n);
 		
